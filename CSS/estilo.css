@@ -1,0 +1,24 @@
+body{
+    background-size: auto 100vh;
+    height: 100vh;
+    background-image: url(blue.jpg);
+    font-family: Arial, Helvetica, sans-serif;
+}
+.site-title,.site-subtitle{
+    color: whitesmoke;
+    text-align: center;
+}
+.site-subtitle{
+    font-style: italic;
+}
+.menu ul{
+    padding: 5px;
+    display: flex;
+    justify-content: space-around;
+    background-color: whitesmoke;
+    list-style: none;
+}
+.menu a{
+    text-decoration: none;   
+    color: rgb(34, 120, 146);
+}
