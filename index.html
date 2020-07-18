@@ -1,23 +1,134 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maicon Renildo</title>
-    <link rel="stylesheet" href="./CSS/estilo.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maicon Renildo</title>
+  <link rel="stylesheet" href="./CSS/estilo.css">
+  <script src="https://kit.fontawesome.com/a9b30520de.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
-    <header>
-        <nav class="menu">
-            <ul>
-                <li> <a href="">Sobre</a> </li>
-                <li> <a href="">Portifólio</a></li>
-                <li><a href="">Contato</a></li>
-            </ul>
-        </nav>
-        <h1 class="site-title">Maicon Renildo</h1>
-        <h2 class="site-subtitle">Jr. frontend developer</h2>
-    </header>
+  <header>
+    <nav class="menu">
+      <ul class="container">
+        <li> <a href="#sobre">Sobre</a> </li>
+        <li> <a href="#portfolio">Portfólio</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+    <div class="titulo">
+      <h1 class="site-title">Maicon Renildo</h1>
+      <h2 class="site-subtitle">Jr. frontend developer</h2>
+    </div>
+
+  </header>
+
+  <section class="sobre container" id="sobre">
+    <h3>Sobre</h3>
+
+    <figure class="avatar">
+      <img src="./eu.jpg" alt="">
+    </figure>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic libero nostrum dolore. Laudantium voluptatem
+      non doloribus accusamus ullam amet atque perspiciatis esse neque, nobis, consectetur sit aliquam veritatis
+      dolore modi?</p>
+
+    <p>Eligendi itaque incidunt quas dolorem nobis perferendis fugit eum, natus sed ipsum unde dolor, architecto,
+      excepturi asperiores iure assumenda officiis? Porro atque itaque molestiae officiis excepturi autem ad,
+      dolores aliquam.</p>
+
+    <p>Nam sunt tenetur aperiam totam quisquam. Labore nam totam assumenda commodi possimus facilis! Quaerat,
+      soluta! Deleniti assumenda animi at aut neque esse illo. Expedita voluptatem magnam inventore voluptates
+      nemo dolorem! </p>
+
+    <p>Assumenda non eius corrupti natus exercitationem consequuntur? Rem velit provident error ipsam similique
+      explicabo illum, molestias, eum mollitia, aliquid ullam facilis eveniet magni reprehenderit vero. Quos alias
+      error vero quis.</p>
+
+    <p>Este site foi construido durante a <a href="https://www.alura.com.br/imersao-css">Imersão CSS da Alura</a>
+    </p>
+  </section>
+
+  <section class="portfolio container" id="portfolio">
+    <h3>Portfólio</h3>
+
+    <div class="grid">
+      <div class="flip-card">
+        <div class="card">
+          <figure class="card-front">
+            <img class="img-portfolio" src="./imagens/ecommerce-creditos-s-o-c-i-a-l-c-u-t-unsplash.jpg" alt="Mobile">
+            <figcaption>Eccomerce</figcaption>
+          </figure>
+          <div class="card-back">Oi, eu sou a parte de trás</div>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="card">
+          <figure class="card-front">
+            <img class="img-portfolio" src="./imagens/mobile-creditos-nate-grant-unsplash.jpg" alt="Mobile">
+            <figcaption>Mobile</figcaption>
+          </figure>
+          <div class="card-back">Oi, eu sou a parte de trás</div>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="card">
+          <figure class="card-front">
+            <img class="img-portfolio" src="./imagens/webdesign-creditos-domenico-loia-unsplash.jpg" alt="Mobile">
+            <figcaption>Web Design</figcaption>
+          </figure>
+          <div class="card-back">Oi, eu sou a parte de trás</div>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="card">
+          <figure class="card-front">
+            <img class="img-portfolio" src="./imagens/projpessoais-creditos-hal-gatewood-unsplash.jpg" alt="Mobile">
+            <figcaption>Projetos Pessoais</figcaption>
+          </figure>
+          <div class="card-back">Oi, eu sou a parte de trás</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contato container" id="contato">
+    <h3>Contato</h3>
+    <div class="grid_icons">
+      <a target='_blank' href="#">
+        <i class="fab fa-github"></i>
+      </a>
+
+      <a target='_blank' href="#">
+        <i class="fab fa-linkedin"></i>
+      </a>
+
+      <a target='_blank' href="#">
+        <i class="fas fa-envelope"></i>
+      </a>
+
+      <a target='_blank' href="#">
+        <i class="fab fa-facebook"></i>
+      </a>
+
+      <a target='_blank' href="#">
+        <i class="fab fa-instagram"></i>
+      </a>
+
+      <a target='_blank' href="#">
+        <i class="fab fa-twitter"></i>
+      </a>
+
+    </div>
+
+  </section>
+
 </body>
+
 </html>

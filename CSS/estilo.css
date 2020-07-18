@@ -1,24 +1,288 @@
-body{
-    background-size: auto 100vh;
-    height: 100vh;
-    background-image: url(blue.jpg);
-    font-family: Arial, Helvetica, sans-serif;
+/*ZERA*/
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
-.site-title,.site-subtitle{
-    color: whitesmoke;
-    text-align: center;
+
+body {
+  background-size: auto 100vh;
+  height: 100vh;
+  background-image: url(./blue.jpg);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
 }
-.site-subtitle{
-    font-style: italic;
+
+/*Inicio da página(título e subtitulo)*/
+header {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.menu ul{
-    padding: 5px;
-    display: flex;
-    justify-content: space-around;
-    background-color: whitesmoke;
-    list-style: none;
+
+/*MENU*/
+.menu {
+  background-color: whitesmoke;
+  position: fixed;
+  width: 100vw;
+  top: 0px;
+  z-index: 1;
 }
-.menu a{
-    text-decoration: none;   
-    color: rgb(34, 120, 146);
+.menu ul {
+  display: flex;
+  justify-content: space-around;
+}
+.menu li {
+  list-style: none;
+}
+.menu a {
+  text-decoration: none;
+  color: rgb(34, 120, 146);
+  /*Para colocar um pading no link eu devo salvá-lo como block*/
+  display: block;
+  padding: 5px;
+  /*Combina as duas transições*/
+  transition: background-color 2s, color 5s;
+}
+.menu a:hover {
+  background-color: rgb(34, 120, 146);
+  color: whitesmoke;
+}
+
+/*TÍTULO*/
+.titulo {
+  transform: scale(0.2) translateY(50vh);
+  opacity: 0;
+  /*Chama a função de animação*/
+  /*duração da animaçãi, tipo, delay para inicio ,chamada,finaliza no estado de 100%*/
+  animation: 2s linear 0.5s animacaoTitulo forwards;
+  /*Forward é necessario para que a animação termine no estado final*/
+}
+/*Criação de uma função de animação*/
+@keyframes animacaoTitulo {
+  0% {
+    /*from*/
+    /*Já considera opacity e transform informados anteriormente*/
+  }
+
+  100% {
+    /*to*/
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+.site-title,
+.site-subtitle {
+  color: whitesmoke;
+  text-align: center;
+}
+.site-subtitle {
+  font-style: italic;
+}
+
+
+/*CONTEÚDO DA PÁGINA*/
+.sobre,
+.contato,
+.portfolio {
+  padding: 2em;
+  /*OPÇÃO ADOTADA NO FIM DA 3A AULA*/
+  /*Pelo*/
+  min-height: 100vh;
+}
+.sobre h3,
+.contato h3,
+.portfolio h3 {
+  color: whitesmoke;
+  margin-bottom: 0.2em;
+  font-size: 2em;
+}
+
+/*SOBRE*/
+.sobre p {
+  color: white;
+  text-indent: 2em;
+  margin-bottom: 1em;
+  text-align: justify;
+}
+.sobre a{
+  color: white;
+  
+}
+.sobre a:hover{
+  text-decoration: none;
+  background-color: cyan;
+}
+.avatar img{
+  /*Coordenadas retiradas do site:https://bennettfeely.com/clippy/*/
+  clip-path:polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  display: block;
+  margin: auto;
+}
+
+/*PORTFÓLIO*/
+.img-portfolio {
+  height: 180px;
+  width: 240px;
+  /*Deixa todas as fotos no tamanho designado*/
+  object-fit: cover;
+  /*transition: transform 500ms;*/
+}
+
+/*.img-portfolio:hover {
+  transform: scale(1.1);
+}*/
+
+/*Configuração dos Cards*/
+.flip-card{
+  /*background-color: darkgreen;*/
+  perspective: 500px;
+  margin: 0;
+  height: 180px;
+  width: 240px;
+  margin: auto;
+}
+/*É necessário usar o hover na flip-card, que fica parada, para evitar um efeito de amasso no card*/
+.flip-card:hover .card{
+  /*Gira o elemento do card*/
+  transform: rotateY(180deg);
+}
+.card{
+  position: relative;
+  /*Define o card como um elemento 3d*/
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+.card-front, 
+.card-back{
+  position: absolute;
+  margin-bottom: 20px;
+  top: 0;
+  left: 0;
+  /*Impede que a parte de trás do card sobreponha a parte da frente*/
+  backface-visibility: hidden;
+}
+.card-back{
+  background-color: white;  
+  height: 180px;  
+  width: 100%;
+  /*Rotaciona a parte de trás do card, ou seja, de inicio ele está invertido*/
+  transform: rotateY(180deg)
+}
+.portfolio .grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  /*Espaço entre os elementos do grid*/  
+  gap: 2em;
+  /*Centraliza verticalmente*/
+  align-content: center;
+  min-height: 500px;
+}
+.portfolio figure {
+  text-align: center;
+}
+.portfolio figure img {
+  border: 2px solid whitesmoke;
+  box-shadow: 1px 1px 2px 1px rgb(34, 120, 146);
+}
+.portfolio figure figcaption {
+  color: whitesmoke;
+}
+
+/*CONTATO*/
+.contato a {
+  color: whitesmoke;
+  text-decoration: none;
+  font-size: 8em;
+  transition: text-shadow 1s;
+}
+.contato a:active,
+.contato a:hover {
+  text-shadow: 2px 2px 2px rgba(255, 255, 255, .5);
+}
+.grid_icons {
+  display: grid;
+  /*Centraliza dentro da div grid_icons*/
+  text-align: center;
+  /*Centraliza a div verticalmente*/
+  align-content: center;
+  /*Para que a div fique centralizada a altura deve ser definida*/
+  min-height: 500px;
+}
+
+/*ADAPTAÇÃO*/
+@media (max-width:300px){
+  .avatar img{
+    width: 200px;
+    height: 200px;
+  }
+}
+@media (min-width:301px){
+  .avatar img{
+    width: 250px;
+    height: 250px;
+  }
+}
+@media (min-width:400px) {
+  body {
+    font-size: 14px;
+  }
+}
+@media (min-width:560px) {
+  .portfolio .grid {
+    grid-template-columns: 240px 240px;   
+    justify-content: center;
+    align-content: center;
+    /*Definir a altura é necessário para centralizar*/
+    height: calc(100vh - 4em - 42px - 1em);
+  }
+  .contato .grid_icons {
+    grid-template-columns: 1fr 1fr;
+    /*Centraliza verticalmente*/
+    align-content: center;
+    /*Para centralizar verticalmente é necessário informar uma altura*/
+    height: calc(100vh - 4em - 42px - 1em);
+  }
+  .avatar img{
+    width: 350px;
+    height: 350px;
+  }
+}
+@media (min-width:600px) {
+  body {
+    font-size: 18px;
+  }
+  .avatar img{
+    float: right;
+    clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+    margin: auto;
+  }
+}
+@media (min-width:880px) {
+  .portfolio .grid {
+    grid-template-columns: repeat(3, 240px);
+    justify-content: center;
+    /*Centraliza verticalmente*/
+    align-content: center;
+    /*Definir a altura é necessário para centralizar*/
+    height: calc(100vh - 4em - 42px - 1em);
+  }
+  .contato .grid_icons {
+    grid-template-columns: 1fr 1fr 1fr;
+    /*Centraliza verticalmente*/
+    align-content: center;
+    /*Para centralizar verticalmente é necessário informar uma altura*/
+    height: calc(100vh - 4em - 42px - 1em);
+  }
+}
+@media (min-width:1200px) {
+  body {
+    font-size: 22px;
+  }
+  .container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
